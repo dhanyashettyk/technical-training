@@ -1,0 +1,42 @@
+//airthmetic operations using functions
+#include<stdio.h>
+int addition(int a,int b)
+{
+    int c;
+    c=a+b;
+    return c;
+}
+int substraction(int a,int b)
+{
+    int c;
+    c=a-b;
+    return c;
+}
+int multiplication(int a,int b)
+{
+    int c;
+    c=a*b;
+    return c;
+}
+float division(float a,float b)
+{
+    float c;
+    c=a/b;
+    return c;
+}
+int main()
+{
+   int x,y,z,w,u,v;
+   scanf("%d%d", &x,&y);
+   z= addition(x,y);
+   w= substraction(x,y);
+   u= multiplication(x,y);
+   v= division(x,y);
+   printf("%d",z);
+   printf("\n %d", w);
+    printf("\n %d", u);
+     printf("\n %f", v);
+   
+   return 0;
+}
+

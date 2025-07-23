@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int s, e, n, temp, rem, digits, sum, count = 0;
+
+    printf("Enter the start and end values: ");
+    scanf("%d %d", &s, &e);
+
+    for(n = s; n <= e; n++)
+    {
+        temp = n;
+        digits = 0;
+        sum = 0;
+
+        while(temp != 0)
+        {
+            temp = temp/ 10;
+            digits++;
+        }
+
+        temp = n;
+
+        // Calculate sum of digits raised to the power of digits
+        while(temp != 0) 
+        {
+            rem = temp % 10;
+            sum = sum pow(rem, digits);
+            temp = temp/ 10;
+        }
+
+        // Check if Armstrong
+        if(sum == n) 
+        {
+            count++;
+        }
+    }
+
+    printf("Total Armstrong numbers between %d and %d is: %d\n", s, e, count);
+
+    return 0;
+}
+
+
+
+
+
