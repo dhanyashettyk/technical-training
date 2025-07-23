@@ -1,0 +1,45 @@
+//program using while loop
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    int n, i=1;
+    scanf("%d", &n);
+    while(i<=n)
+    {
+        printf("\n abc");
+        i++;
+    }
+    return 0;
+}
+
+//program using do while loop
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    int n, i=1;
+    scanf("%d", &n);
+    do
+    {
+        printf("\n abc");
+        i++;
+    }while(i<=n)
+    return 0;
+}
+
+//program using for loop
+#include <stdio.h>
+int main() {
+    // Write C code here
+    int n, i=1;
+    scanf("%d", &n);
+     for(i=1;i<=n;i++)
+    {
+        printf("\n abc");
+        
+    }
+    return 0;
+}

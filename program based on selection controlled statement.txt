@@ -1,0 +1,100 @@
+//prgrm using selection controlled statements to deposit withdraw nd change pin
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    int balance= 1000 , pin = 1234,d,a,n, newpin,renewpin;
+    printf(" choose any one of the following option :");
+    printf("\n 1.Deposit \n 2.withdraw \n 3.balance enquiry \n 4.pin change");
+    printf("\n enter the number: ");
+    scanf("\n %d", &n);
+    switch(n)
+    {
+        case 1:
+        printf("enter the pin number:");
+        scanf("\n %d", &pin);
+        if(pin == 1234 )
+        {
+            printf("enter the amount to be deposited in account");
+            scanf("\n  %d", &d);
+            a= balance + d;
+            printf("\n the amount is successfully deposited \n balance = %d ", a);
+        }
+        else 
+        {
+            printf("\n the pin invalid");
+        }
+        break;
+        
+        case 2:
+        printf("enter the pin number:");
+        scanf("%d", &pin);
+        if(pin == 1234)
+        {
+            printf("enter the amount to be withdrawn");
+            scanf("%d", &d);
+            if(balance < d)
+                {
+                    printf("the amount is not sufficient");
+                }
+                else 
+                {
+                   a= balance -d;
+                   printf("the amount  is withdrawed and balance is = %d", a);
+                }
+            
+        }
+        else
+        {
+            printf("\n the pin is invalid");
+        }
+        break;
+        
+        case 3:
+        printf("enter the pin number:");
+        scanf("%d", &pin);
+        if(pin == 1234)
+        {
+            printf("balance is = 1000");
+        }
+        else 
+        {
+            printf("\n the pin is invalid");
+        }
+        break;
+        
+        case 4:
+        printf("enter the current pin to change the pin:");
+        scanf("\n %d", &pin);
+        if(pin == 1234 )
+        {
+            printf("enter the new pin :");
+            scanf("\n %d", &newpin);
+            
+            printf(" re enter the new pin:");
+            scanf("\n %d", &renewpin);
+            if(newpin == renewpin)
+            {
+            printf(" the pin is updated");
+            }
+            else 
+            {
+                printf("\n reentered pin is incorrect ");
+            }
+        }
+        else 
+        {
+            printf("the pin is invalid");
+        }
+        break;
+        
+        
+        default:
+        printf("\n the option is invalid");
+        break;
+              
+    }
+
+    return 0;
+}

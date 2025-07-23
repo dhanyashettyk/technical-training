@@ -1,0 +1,50 @@
+//prgrm to perform arithmetic operations based on user selection
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a,b,n;
+    float c;
+    printf(" choose any one of the following option :");
+    printf("\n 1.ADD \n 2.SUB \n 3.MUL \n 4.DIV");
+    printf("\n enter the number: ");
+    scanf("\n %d", &n);
+    switch(n)
+    {
+        case 1:
+        printf("enter any two number:");
+        scanf("\n %d %d", &a,&b);
+        c=a+b;
+        printf(" ADD= %f", c);
+        break;
+        
+        case 2:
+        printf("enter any two number:");
+        scanf("\n %d %d", &a,&b);
+        c=a-b;
+        printf(" SUB= %f", c);
+        break;
+        
+        case 3:
+        printf("enter any two number:");
+        scanf("\n %d %d", &a,&b);
+        c=a*b;
+        printf(" MUL= %f", c);
+        break;
+        
+        case 4:
+        printf("enter any two number:");
+        scanf("\n %d %d", &a,&b);
+        c=a/b;
+        printf(" DIV= %f", c);
+        break;
+        
+        
+        default:
+        printf("\n the option is invalid");
+        break;
+              
+    }
+
+    return 0;
+}

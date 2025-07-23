@@ -1,0 +1,39 @@
+//find smallest number from given 2 number
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int x,y;
+    printf("enter the value for x :");
+    scanf("\n %d", &x);
+    printf("enter the value for y :");
+    scanf("\n %d", &y);
+    (x<y) ? printf(" x is smaller number is : %d", x) : printf("\n the smaller number is : %d", y);
+    return 0;
+
+    
+    
+}
+
+//find smallest number from given 3 number
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3, smallest;
+
+    // Prompt the user to enter three numbers
+    printf("Enter three numbers: ");
+    // Read the three numbers from the user
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    // Use nested conditional operators to find the smallest number
+    // First, compare num1 and num2. The smaller of these two is then compared with num3.
+    smallest = (num1 < num2) ? ((num1 < num3) ? num1 : num3) : ((num2 < num3) ? num2 : num3);
+
+    // Print the smallest number
+    printf("The smallest number is: %d\n", smallest);
+
+    return 0;
+}
+
