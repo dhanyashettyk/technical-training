@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code hereint abs;
+    
+    printf("%f", ceil(4.2)); // returns 5 nearest highest integer
+    printf("\n %f", floor(4.9)); //returns 4 nearest lowest integer
+     printf("\n %f", abs(-30)); //30
+      printf("\n %f", fabs(-30)); //30
+    printf("\n %f", sqrt(25)); //square root fn
+    printf("\n %f", pow(2,3)); //power function
+    printf("\n %f", log(2));  //log fn
+    printf("\n %f", log10(2));  // log fn with base 10
+    printf("\n %f", exp(2)); //exponential function
+    printf("\n %f", sin(30)); //sine fn
+    printf("\n %f", cos(30)); //cosine fn
+     printf("\n %f", tan(30)); //tan fn
+      printf("\n %f", round(4.8)); //rounds off the value
+       printf("\n %f", round(4.2)); //rounds off the value
+    
+    
+    return 0;
+}
