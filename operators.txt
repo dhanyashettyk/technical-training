@@ -1,0 +1,27 @@
+//operator 
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a = 278, b= 353;
+    printf(" %d", a&b);
+    printf("\n %d", a|b);
+    printf("\n %d", a^b);
+    printf("\n %d", a<<b);
+    printf("\n %d", a>>b);
+    return 0;
+}
+
+//to check even or odd
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a;
+    printf(" enter the value for a:");
+    scanf("\n %d", &a);
+    (a&1)==0 ? printf("the number is even") : printf("the number is odd"); //converting number into binary and &  with 1( if equal to zero the its even or else its false) 
+    
+    
+    return 0;
+}
