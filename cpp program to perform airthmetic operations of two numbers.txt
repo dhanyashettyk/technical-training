@@ -1,0 +1,44 @@
+// cpp program to perform addition of two numbers
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int a=3,b=4,c;
+    c=a+b;
+    cout<<"the addition of two numbers = "<<c;
+    return 0;
+}
+
+// cpp program to perform substraction of two numbers
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int a=7,b=4,c;
+    c=a-b;
+    cout<<"the substraction of two numbers = "<<c;
+    return 0;
+}
+
+// cpp program to perform multiplication of two numbers
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int a=7,b=4,c;
+    c=a*b;
+    cout<<"the multiplication of two numbers = "<<c;
+    return 0;
+}
+
+// cpp program to perform division of two numbers
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int a=7,b=4;
+    float c;
+    c=a/b;
+    cout<<"the division of two numbers = "<<c;
+    return 0;
+}
