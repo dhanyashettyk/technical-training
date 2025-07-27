@@ -1,0 +1,81 @@
+
+//c program to print Right angled triangle
+#include<stdio.h>
+int main()
+{
+    int m,n,i,j;
+    scanf("%d%d",&m,&n);
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//c program to print Left angled triangle
+#include<stdio.h>
+int main()
+{
+    int m,n,i,j;
+    scanf("%d%d",&m,&n);
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n-i;j++)
+        {
+            printf("  ");
+        }
+        for(j=1;j<=i;j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//c program to print Mirror of left angled triangle
+#include<stdio.h>
+int main()
+{
+    int i,j,n;
+    printf("Enter number of rows: ");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        for(j=1;j<=n-i;j++)
+        {
+            printf("  ");
+        }
+        for(j=1;j<=i;j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//c program to print  mirror of right angled
+#include<stdio.h>
+int main()
+{
+    int i,j,n;
+    printf("Enter number of rows: ");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        for(j=1;j<=i;j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
