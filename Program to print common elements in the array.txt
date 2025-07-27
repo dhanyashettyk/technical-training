@@ -1,0 +1,43 @@
+// Program to print common elements from two given arrays A and B
+
+#include <stdio.h>
+
+int main() {
+    int n, m, i, j;
+    
+    // Input size of first array
+    printf("Enter size of array A: ");
+    scanf("%d", &n);
+    int A[n];
+    
+    // Input elements of array A
+    printf("Enter %d elements of array A:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    // Input size of second array
+    printf("Enter size of array B: ");
+    scanf("%d", &m);
+    int B[m];
+    
+    // Input elements of array B
+    printf("Enter %d elements of array B:\n", m);
+    for (i = 0; i < m; i++) {
+        scanf("%d", &B[i]);
+    }
+
+    // Print common elements
+    printf("Common elements are:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            if (A[i] == B[j]) {
+                printf("%d ", A[i]);
+                break; // Avoid printing duplicates if same element appears multiple times in B
+            }
+        }
+    }
+
+    printf("\n");
+    return 0;
+}

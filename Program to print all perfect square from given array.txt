@@ -1,0 +1,36 @@
+// Program to print all perfect square elements from an array
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+ {
+    int n, i;
+    
+    // Input size of array
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    int A[n];
+
+    // Input elements of array
+    printf("Enter %d positive integers:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &A[i]);
+    }
+
+    // Print perfect square elements
+    printf("Perfect square elements are:\n");
+    for (i = 0; i < n; i++) 
+    {
+        int root = sqrt(A[i]);
+        if (root * root == A[i])
+        {
+            printf("%d ", A[i]);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}

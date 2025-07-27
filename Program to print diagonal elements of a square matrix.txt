@@ -1,0 +1,32 @@
+// Program to print diagonal elements of a square matrix
+
+#include <stdio.h>
+
+int main() 
+{
+    int n, i, j;
+
+    printf("Enter the size of square matrix: ");
+    scanf("%d", &n);
+
+    int A[n][n];
+
+    printf("Enter %d elements of the matrix:\n", n * n);
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < n; j++) 
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Diagonal elements are:\n");
+    for (i = 0; i < n; i++) 
+    {
+        printf("%d ", A[i][i]);    
+        if (i != n - 1 - i)
+            printf("%d ", A[i][n - 1 - i]);  
+    }
+
+    return 0;
+}

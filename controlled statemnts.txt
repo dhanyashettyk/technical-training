@@ -1,0 +1,123 @@
+//if else to check number positive or not
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int n;
+    printf(" enter the value for n:");
+    scanf("\n %d", &n);
+    if(n>0)
+    {
+        printf("\n the given number is positive");
+        
+    }
+    else
+    {
+        printf("\n the given number is negative");
+    }
+    
+    
+    return 0;
+}
+//to check whether the character is vowel or not using if
+#include<stdio.h>
+int main()
+{
+    char ch ;
+    printf("\n enter the character :");
+    scanf("\n %c", &ch);
+    if(ch== 'a' || ch== 'i' || ch=='e' ||ch== 'o'|| ch == 'u')
+    {
+        printf("\n the character entered is vowel");
+    }
+    else
+    {
+        printf("\n the character entered is not vowel");
+    }
+    
+    return 0;
+}
+
+//printing total , avg marks and resulting status of pass or fail using if else
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+   int m,p,c;
+   float totalmarks, avgmarks;
+   scanf("\n %d", &m,&p,&c);
+   if(m>35)
+   {
+       if(p>35)
+       {
+           if(c>35)
+           {
+               totalmarks = m+p+c;
+               avgmarks = totalmarks/3;
+               printf("\n total marks = %f \n avgmarks = %f", totalmarks, avgmarks);
+           }
+           else
+           {
+               printf("\n the student failed in chemisrty");
+           }
+           
+        
+           
+          
+       }
+       else
+           {
+               printf("\n the student failed in physics");
+           }
+   }
+           else
+           {
+               printf("\n the student failed in mathematics");
+           }
+       
+   return 0;
+}
+//grading of subject using if else
+int main()
+{
+    int m,p,c, total_marks;
+    float avgmarks;
+    printf("\n enter the marks of the student of subject m , p,c:");
+    scanf("\n %d %d %d", &m,&p,&c);
+    total_marks = m+p+c;
+    avgmarks= total_marks/3;
+    printf("\n the total_marks and avgmarks are : %d %f", total_marks, avgmarks);
+    if(avgmarks>90 && avgmarks<100)
+    {
+        printf("\n grade = 'A+'");
+    }
+    else if(avgmarks>80 && avgmarks<90)
+    {
+        printf("\n grade = 'A'");
+    }
+    else if(avgmarks>70 && avgmarks<80)
+    {
+        printf("\n grade = 'B+'");
+    }
+    else if(avgmarks>60 && avgmarks<70)
+    {
+        printf("\n grade = 'B'");
+    }
+    else if(avgmarks>50 && avgmarks<60)
+    {
+        printf("\n grade = 'C'");
+    }
+    else if(avgmarks>40 && avgmarks<50)
+    {
+        printf("\n grade = 'D'");
+    }
+    else if(avgmarks>35 && avgmarks<40)
+    {
+        printf("\n grade = 'E'");
+    }
+    else if(avgmarks>0 && avgmarks<35)
+    {
+        printf("\n grade = 'FAIL'");
+    }
+    return 0;
+}

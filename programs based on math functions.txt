@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int x,y;
+    float z;
+    printf("enter the two numbers to perform the calculation:");
+    scanf("%d%d", &x,&y);
+    z=(sin(x)+cos(y))/tan(x);
+    printf("the value of z= %.2f", ceil(z));
+    return 0;
+}
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int x,y;
+    float z;
+    printf("enter the two numbers to perform the calculation:");
+    scanf("%d%d", &x,&y);
+    z=sqrt((log(x)+exp(y))/log10(x));
+    printf("the value of z= %.2f ", ceil(z));
+    return 0;
+}
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int x,y;
+    float z;
+    printf("enter the two numbers to perform the calculation:");
+    scanf("%d%d", &x,&y);
+    z=(log(pow(x,y))+exp(y))/pow(x,y);
+    printf("the value of z= %.2f ", fabs(z));
+    return 0;
+}
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+    int x,y;
+    float z;
+    printf("enter the two numbers to perform the calculation:");
+    scanf("%d%d", &x,&y);
+    z=(sin(x)+cos(x)+tan(x))/log10(pow(x,y));
+    printf("the value of z= %.2f ", fabs(z));
+    return 0;
+}

@@ -1,0 +1,39 @@
+// Program to find the array element that contains the smallest digit among all digits of all elements in the array.
+
+#include <stdio.h>
+
+int main() 
+{
+    int n, i, j, num, digit, sd= 9, re = 0;
+
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+
+    int a[n];
+    printf("Enter %d positive integers:\n", n);
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%d", &a[i]);
+    }
+
+    for (i = 0; i < n; i++) 
+    {
+        num = a[i];
+        while (num > 0) 
+        {
+            digit = num % 10;
+            if (digit < sd)
+            {
+                sd = digit;
+                re = a[i];
+            }
+            if (sd == 0)        // can't be smaller than 0 in(que)
+                break;
+            num = num/ 10;
+        }
+        if (sd == 0)
+            break;
+    }
+    printf("Element with the smallest digit is: %d\n", re);
+    return 0;
+}

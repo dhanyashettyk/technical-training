@@ -1,0 +1,42 @@
+//cpp Program to find the sum of the Armstrong numbers in the user-given range.
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+bool isArmstrong(int n)
+{
+    int sum = 0, temp = n, digits = 0;
+    while (temp > 0)
+    {
+        digits++;
+        temp = temp / 10;
+    }
+    temp = n;
+    while (temp > 0)
+    {
+        int d = temp % 10;
+        sum = sum + pow(d, digits);
+        temp = temp / 10;
+    }
+    return sum == n;
+}
+
+int sumArmstrong(int start, int end)
+{
+    int sum = 0;
+    for (int i = start; i <= end; i++)
+    {
+        if (isArmstrong(i))
+            sum += i;
+    }
+    return sum;
+}
+
+int main()
+{
+    int s, e;
+    cout << "Enter start and end: ";
+    cin >> s >> e;
+    cout << "Sum of Armstrong numbers = " << sumArmstrong(s, e) << endl;
+    return 0;
+}
