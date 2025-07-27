@@ -1,0 +1,74 @@
+//c program to find largest prime in given string
+#include <stdio.h>
+#include <ctype.h>
+#include <math.h>
+
+int main() {
+    char s[100];
+    int i, j, n, k, isPrime;
+    int maxPrime;
+    int flag = 0;
+
+    printf("Enter the string: ");
+    scanf("%[^\n]s", s);
+
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        if (isdigit(s[i])) 
+        {
+            
+            n = s[i] - '0';
+            for (j = i + 1; s[j] != '\0'; j++) 
+            {
+                if (isdigit(s[j])) 
+                {
+                    n = n * 10 + (s[j] - '0');
+                } 
+                else
+                {
+                    break;
+                }
+            }
+            i = j - 1;
+
+            // Check if n is prime
+            if (n > 1) {
+                isPrime = 1;
+                for (k = 2; k <= sqrt(n); k++) 
+                {
+                    if (n % k == 0)
+                    {
+                        isPrime = 0;
+                        break;
+                    }
+                }
+
+                
+                if (isPrime) 
+                {
+                    if (flag == 0)
+                    {
+                        maxPrime = n;
+                        flag = 1;
+                    } 
+                    else if (n > maxPrime) 
+                    {
+                        maxPrime = n;
+                    }
+                }
+            }
+        }
+    }
+
+    if (flag == 1) 
+    {
+        printf("The largest prime number in the string is: %d\n", maxPrime);
+    } 
+    else 
+    {
+        printf("No prime numbers found in the string.\n");
+    }
+
+    return 0;
+}
+

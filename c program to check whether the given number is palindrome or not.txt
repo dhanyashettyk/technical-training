@@ -1,0 +1,24 @@
+//to check whether the given number is palindrome or not
+#include<stdio.h>
+int main()
+{
+    int n,sum=0,r;
+    scanf("%d",&n);
+    int original=n;
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum*10+r;
+        n=n/10;
+        
+    }
+    if(sum == original)
+    {
+       printf("\n the given number is palindrome "); 
+    }
+    else
+    {
+    printf("\n the given number is not a palindrome ");
+    }
+    return 0;
+}

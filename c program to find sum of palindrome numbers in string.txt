@@ -1,0 +1,51 @@
+//c program to find sum of palindrome numbers in string
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    int i, j, n, original, rev, sum = 0;
+
+    printf("Enter the string: ");
+    scanf("%[^\n]s", s);
+
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        if (isdigit(s[i]))
+        {
+            // Extract number from string
+            n = s[i] - '0';
+            for (j = i + 1; s[j] != '\0'; j++) 
+            {
+                if (isdigit(s[j])) 
+                {
+                    n = n * 10 + (s[j] - '0');
+                } 
+                else 
+                {
+                    break;
+                }
+            }
+            i = j - 1;
+
+            // Check if number is palindrome
+            original = n;
+            rev = 0;
+            while (n > 0) 
+            {
+                rev = rev * 10 + (n % 10);
+                n = n / 10;
+            }
+
+            if (rev == original) 
+            {
+                sum = sum+ original;  
+            }
+        }
+    }
+
+    printf("Sum of all palindrome numbers in the string: %d\n", sum);
+
+    return 0;
+}
+

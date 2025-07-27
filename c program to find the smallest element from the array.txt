@@ -1,0 +1,24 @@
+//c program to find the largest element from the array
+#include<stdlib.h>
+#include<limits.h>
+int main()
+{
+    int n,i,s=INT_MAX;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(s>a[i])
+        {
+            s=a[i];
+        }
+    }
+    printf("The smallest element is: %d\n", s);
+    return 0;
+}
+

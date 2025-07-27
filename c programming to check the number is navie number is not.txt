@@ -1,0 +1,24 @@
+// c programming to check the number is navie number is not
+#include<stdio.h>
+int main()
+{
+    int n,temp,r,sum=0;
+    scanf("%d",&n);
+    temp=n;
+    while(temp>0)
+    {
+        r=temp%10;
+        sum= sum+r;
+        temp= temp/10;
+    }
+    if(n%sum==0)
+    {
+        printf("%d is a Navie number",n);
+    }
+    else
+    {
+        printf("%d is not a Navie number",n);
+    }
+
+    return 0;
+}

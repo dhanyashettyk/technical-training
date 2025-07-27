@@ -1,0 +1,32 @@
+// c program to count number of armstrong numbers in given s and e range
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int s,e,n,temp,rem,count,sum,i,total=0;
+    scanf("%d%d",&s,&e);
+    for(n=s;n<=e;n++)
+    {
+        temp=n;
+        count=0;
+        sum=0;
+        while(temp!=0)   // Count number of digits
+        {
+            count++;
+            temp/=10;
+        }
+        temp=n;
+        while(temp!=0)  // Calculate sum of digits raised to the power count
+        {
+            rem=temp%10;
+            sum+=pow(rem,count);
+            temp/=10;
+        }
+        if(sum==n)
+        {
+            total++;
+        }
+    }
+    printf("\nTotal Armstrong numbers = %d",total);
+    return 0;
+}

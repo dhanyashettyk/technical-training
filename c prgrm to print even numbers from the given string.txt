@@ -1,0 +1,43 @@
+//c prgrm to print even numbers from the given string
+#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    char s[100];
+    int i, j, n, sum = 0;
+
+    printf("Enter the string: ");
+    scanf("%[^\n]s", s);  
+
+
+    for (i = 0; s[i] != '\0'; i++) 
+    {
+        n=0;
+        if (isdigit(s[i])) 
+        {
+            
+            n = s[i] - '0';
+            for (j = i + 1; s[j] != '\0'; j++) 
+            {
+                if (isdigit(s[j])) 
+                {
+                    n = n * 10 + (s[j] - '0');
+                } 
+                else 
+                {
+                    i=j;
+                    break;
+                }
+            }
+
+            // Check if the number is even
+            if (n % 2 == 0) 
+            {
+                printf("%d ", n);
+            }
+        }
+    }
+
+    return 0;
+}

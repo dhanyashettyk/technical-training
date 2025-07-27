@@ -1,0 +1,43 @@
+//c program without string handling  fn(palindrome with test cases)
+#include <stdio.h>
+#include <ctype.h> 
+
+int main() 
+{
+    char str[100];
+    int len = 0, i, flag = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Find string length without using strlen()
+    while (str[len] != '\0')
+    {
+        len++;
+    }
+
+    // Check for palindrome
+    for (i = 0; i < len / 2; i++)
+    {
+        char ch1 = tolower(str[i]);
+        char ch2 = tolower(str[len - 1 - i]);
+
+        if (ch1 != ch2) 
+        {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag == 0)
+    {
+        printf("Palindrome\n");
+    } 
+    else 
+    {
+        printf("Not Palindrome\n");
+    }
+
+    return 0;
+}
+

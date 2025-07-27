@@ -1,0 +1,25 @@
+//c program to find the sum of smallest and largest digit in the given number
+#include<stdio.h>
+int main()
+{
+    int n,r,s=0,l=9,sum=0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while(n > 0)
+    {
+        r = n % 10;
+        if(r <l)
+        {    
+            l=r;
+        }  
+        
+        if(r > s)
+        {
+             s=r;
+        }
+        n=n/10;
+    }
+    sum=s+l;
+    printf("Sum of smallest and largest digits: %d\n", sum);
+    return 0;
+}

@@ -1,0 +1,57 @@
+//c program to find sum of largest nd smallest number in string
+#include <stdio.h>
+#include <ctype.h>
+#include <limits.h>
+
+int main() {
+    char s[100];
+    int i, j, n;
+    int min = INT_MAX, max = 0;
+    int flag = 0;
+
+    printf("Enter the string: ");
+    scanf("%[^\n]s", s);
+
+    for (i = 0; s[i] != '\0'; i++) 
+    {
+        if (isdigit(s[i])) 
+        {
+            n = s[i] - '0';
+
+            for (j = i + 1; s[j] != '\0'; j++)
+            {
+                if (isdigit(s[j])) 
+                {
+                    n = n * 10 + (s[j] - '0');
+                }
+                else 
+                {
+                    i=j;
+                    break;
+                }
+            }
+           
+
+            // Update max and min
+            if (n > max) max = n;
+            if (n < min) min = n;
+
+            flag = 1; 
+        }
+    }
+
+    if (flag == 1) 
+    {
+        printf("Smallest number: %d\n", min);
+        printf("Largest number: %d\n", max);
+        printf("Sum of smallest and largest: %d\n", min + max);
+    } 
+    else
+    {
+        printf("No numbers found in the string.\n");
+    }
+
+    return 0;
+}
+
+

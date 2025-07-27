@@ -1,0 +1,36 @@
+//c program to sort and find the kth largest and kth smallest element and their product in the given array (k<n)
+#include <stdio.h>
+int main() {
+    int n, k, i, j, temp;
+    int kth_smallest,kth_largest,product;
+    printf("Enter the size of the array : ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter value of k : ");
+    scanf("%d", &k);
+    for(i = 0; i < n - 1; i++)
+    {                                  // Sort the array in ascending order
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[i] > arr[j]) 
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    kth_smallest = arr[k - 1];   // k-th smallest
+    kth_largest = arr[n - k];    // k-th largest
+    product = kth_smallest * kth_largest;
+    printf("kth smallest element: %d\n", kth_smallest);
+    printf("kth largest element: %d\n", kth_largest);
+    printf("Product of kth smallest and kth largest: %d\n", product);
+    return 0;
+}
+
