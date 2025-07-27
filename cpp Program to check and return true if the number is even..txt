@@ -1,0 +1,21 @@
+
+//cpp Program to check and return true if the number is even.
+#include <iostream>
+using namespace std;
+
+bool isEven(int num) 
+{
+    return (num%2 == 0);
+}
+
+int main() 
+{
+    int number;
+    cout<<"Enter a number: ";
+    cin>>number;
+    if (isEven(number))
+    {
+        return true;
+    }
+    return 0;
+}

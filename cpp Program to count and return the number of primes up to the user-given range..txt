@@ -1,0 +1,38 @@
+//cpp Program to count and return the number of primes up to the user-given range.
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+bool isPrime(int n) 
+{
+    if (n <= 1)
+     return false;
+     int i;
+    for ( i = 2; i<= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        return false;
+    }
+    return true;
+}
+
+int countPrimesInRange(int start, int end)
+{
+    int count = 0;
+    int i;
+    for ( i = start; i <= end; i++)
+    {
+        if (isPrime(i)) 
+         count++;
+    }
+    return count;
+}
+
+int main()
+{
+    int start, end;
+    cout << "Enter start and end of range: ";
+    cin >> start >> end;
+    cout << "Number of primes = " << countPrimesInRange(start, end) << endl;
+    return 0;
+}

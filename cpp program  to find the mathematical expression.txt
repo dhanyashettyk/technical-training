@@ -1,0 +1,21 @@
+// cpp to find the mathematical expression
+#include<iostream>
+#include<math.h>
+#include<stdlib.h>
+using namespace std;
+float expr(int x,int y)
+{
+    
+     return (log10(exp(x)) + log(sqrt(y))) / (sin(x) + exp(x) + pow(x, y));
+}
+int main()
+{
+    int a,b;
+    float z;
+    cout<<"enter the numbers : ";
+    cin>>a>>b;
+    z=expr(a,b);
+    cout<< "the value of given expression is : " << z <<endl;
+    
+    return 0;
+}

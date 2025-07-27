@@ -1,0 +1,35 @@
+//cpp Program to check and return true if the given number is an Armstrong number,
+else return false.
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+bool isArmstrong(int n)
+{
+    int sum = 0, temp = n, digits = 0;
+    while (temp > 0)
+    {
+        digits++;
+        temp = temp/ 10;
+    }
+    temp = n;
+    while (temp > 0)
+    {
+        int d = temp % 10;
+        sum = sum + pow(d, digits);
+        temp =temp+ 10;
+    }
+    return sum == n;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    if (isArmstrong(n))
+        cout << "True" << endl;
+    else
+        cout << "False" << endl;
+    return 0;
+}

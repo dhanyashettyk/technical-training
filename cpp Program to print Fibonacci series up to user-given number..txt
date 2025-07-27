@@ -1,0 +1,25 @@
+//cpp  Program to print Fibonacci series up to user-given number.
+#include <iostream>
+using namespace std;
+
+void printFibonacci(int n)
+{
+    int a = 0, b = 1, c;
+    while (a <= n)
+    {
+        cout << a << " ";
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    cout << endl;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    printFibonacci(n);
+    return 0;
+}

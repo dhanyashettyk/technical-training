@@ -1,0 +1,23 @@
+// cpp swapping without using third variable
+#include<iostream>
+#include<math.h>
+using namespace std;
+void swapping(int a,int b)
+{
+    cout<<"the numbers before swapping a ="<<a;
+    cout<<"\nthe numbers before swapping b ="<<b;
+    a= a+b;
+    b= a-b;
+    a= a-b;
+    cout<<"\nthe numbers after swapping a ="<<a;
+    cout<<"\nthe numbers after swapping b ="<<b;
+    
+    
+}
+int main()
+{
+    int x,y;
+    cin>>x>>y;
+    swapping(x,y);
+    return 0;
+}

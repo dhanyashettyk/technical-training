@@ -1,0 +1,24 @@
+//Write a cpp program to find the greatest among 2 numbers.
+#include <iostream>
+using namespace std;
+
+bool isgreat(int n1, int n2) 
+{
+    return (n1>n2)? true : false;
+}
+
+int main() 
+{
+    int m1,m2;
+    cout<<"Enter a numbers: ";
+    cin>>m1>>m2;
+    if(isgreat(m1,m2))
+    {
+        cout<< m1 << " is greater"<< endl;
+    }
+    else
+    {
+        cout<< m2 << " is greater"<< endl;
+    }
+    return 0;
+}

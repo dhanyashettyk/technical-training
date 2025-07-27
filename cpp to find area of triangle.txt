@@ -1,0 +1,19 @@
+
+// cpp to find area of triangle
+#include<iostream>
+#include<math.h>
+using namespace std;
+int areaoftriangle(int b,int h)
+{
+    
+    return 0.5*b*h;
+}
+int main()
+{
+    int x,y;
+    float z;
+    cin>>x>>y;
+    z=areaoftriangle(x,y);
+    cout<<z;
+    return 0;
+}

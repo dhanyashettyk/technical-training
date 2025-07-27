@@ -1,0 +1,80 @@
+//cpp program to withdraw deposit change pin and check balance using functions
+#include <iostream>
+using namespace std;
+
+float balance = 1000;
+int pin = 1234;
+
+void deposit(float amount) 
+{
+    balance = balance + amount;
+    cout << "Deposit successful. New Balance: " << balance << endl;
+}
+
+void withdraw(float amount)
+{
+    if (amount > balance)
+        cout << "Insufficient balance.\n";
+    else
+    {
+        balance -= amount;
+        cout << "Withdrawal successful.Remaining Balance: " << balance << endl;
+    }
+}
+
+void checkBalance() 
+{
+    cout << "Current Balance: " << balance << endl;
+}
+
+void changePin(int newPin)
+{
+    pin = newPin;
+    cout << "pin successfully changed.\n";
+}
+
+int main()
+{
+    int inputPin, choice, newPin;
+    float amount;
+
+    cout << "Enter PIN: ";
+    cin >> inputPin;
+
+    if (inputPin != pin) 
+    {
+        cout << "Invalid PIN\n";
+        return 0;
+    }
+
+    cout << "\n1. Deposit\n2. Withdrawal\n3. Balance Check\n4. PIN Change\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1) 
+    {
+        cout << "Enter deposit amount: ";
+        cin >> amount;
+        deposit(amount);
+    } else if (choice == 2)
+    {
+        cout << "Enter withdrawal amount: ";
+        cin >> amount;
+        withdraw(amount);
+    } else if (choice == 3)
+    {
+        checkBalance();
+    } else if (choice == 4) 
+    {
+        cout << "Enter new PIN: ";
+        cin >> newPin;
+        changePin(newPin);
+    } else
+    {
+        cout << "Invalid option.\n";
+    }
+
+    return 0;
+}
+
+

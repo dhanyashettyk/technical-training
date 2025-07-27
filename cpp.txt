@@ -1,0 +1,46 @@
+//cpp to delete duplicate elemnts and return array with unique elements
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+int n;
+int* uniquearray(int *x)
+{
+     int i,j,flag,count=0;
+     int *y=(int*)malloc(n * sizeof(int));
+     for( i = 0; i < n; i++) 
+     {
+        flag=1;
+        for( j = 0; j < count; j++) 
+        {
+         if(x[i] == y[j]) 
+         flag=0;
+        }
+        if(flag==1)
+        y[count++] = x[i]; 
+    }
+    n=count;
+    y=(int*)realloc(y,count*sizeof(int));
+    return y;
+}
+
+
+int main()
+{
+   int *p,*q,i;
+   cout<<" enter the size of array : ";
+   cin>>n;
+   p=(int*)malloc(n*sizeof(int));
+   for(i=0;i<n;i++)
+   {
+       cin>>p[i];
+   }
+   q=uniquearray(p,n);
+   for(i=0;i<n;i++)
+   {
+       cout<<q[i]<<"\t";
+   }
+   return 0;
+   
+}
+
+you will be given a string of n length then return the string without special characters .test case1: s=ABC@123  test case2: 123@$#a?b<c .............................refer this code:                                                               

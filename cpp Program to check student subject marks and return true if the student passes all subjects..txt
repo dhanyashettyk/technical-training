@@ -1,0 +1,35 @@
+
+//cpp Program to check student subject marks and return true if the student passes all subjects.
+#include <iostream>
+using namespace std;
+bool ispass(int x,int y,int z) 
+{
+    return x>35 && y>35 && z>35;
+}
+
+int main() 
+{
+    int m;
+    int p;
+    int c;
+    cout<<"Enter the marks: ";
+    cin>>m>>p>>c;
+    if (ispass(m,p,c))
+    {
+        cout<< "student is passed " << endl;
+    }
+    else
+    {
+    cout<< "student is failed" << endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+

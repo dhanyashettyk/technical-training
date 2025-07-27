@@ -1,0 +1,48 @@
+//cpp to implement withdraw operations //33
+#include <iostream>
+using namespace std;
+
+// Function to check PIN
+bool isPinCorrect(int enteredPin, int correctPin) 
+{
+    return enteredPin == correctPin;
+}	`
+
+// Function to withdraw amount and return updated balance
+int withdraw(int balance, int amount) 
+{
+    if (amount > balance) 
+    {
+        cout << "insufficient balance." << endl;
+        return balance;
+    } else 
+    {
+        cout << " Amount Withdrawn: " << amount << endl;
+        return balance - amount;
+    }
+}
+
+int main()
+{
+    int balance =1400;
+    int correctPin =1234;
+    int enteredPin,amount;
+
+    cout << "Enter PIN: ";
+    cin >> enteredPin;
+
+    if (isPinCorrect(enteredPin, correctPin)) 
+    {
+        cout << "correct PIN.\n";
+        cout << "Enter amount to withdraw: ";
+        cin >> amount;
+        balance = withdraw(balance, amount);
+        cout << " Remaining Balance: " << balance << endl;
+    } 
+    else
+    {
+        cout << "invalid Pin \n";
+    }
+
+    return 0;
+}

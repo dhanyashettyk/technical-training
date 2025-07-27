@@ -1,0 +1,28 @@
+//cpp program to display marks using if else and functions
+#include <iostream>
+using namespace std;
+
+void checkGrade(int marks1,int marks2,int marks3)
+{
+    if (marks1 >= 90 && marks2 >= 90 && marks3 >= 90 )
+        cout << "Grade: A\n";
+    else if (marks1 >= 80 && marks2 >= 80 && marks3 >= 80 )
+        cout << "Grade: B\n";
+    else if (marks1 >= 70 && marks2 >= 70 && marks3 >= 70 )
+        cout << "Grade: C\n";
+    else if (marks1 >= 60 && marks2 >= 60 && marks3 >= 60 )
+        cout << "Grade: D\n";
+    else
+        cout << "Grade: F \n";
+}
+
+int main()
+{
+    int m1,m2,m3;
+    cout << "Enter student marks: ";
+    cin >>m1>>m2>>m3;
+    checkGrade(m1,m2,m3);
+    return 0;
+}
+
+

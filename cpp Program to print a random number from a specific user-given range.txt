@@ -1,0 +1,20 @@
+//cpp Program to print a random number from a specific user-given range
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int getRandomInRange(int start, int end)
+{
+    srand(time(0));  
+    return start + rand() % (end - start + 1);
+}
+
+int main() {
+    int start, end;
+    cout << "Enter start and end of range: ";
+    cin >> start >> end;
+    cout << "Random number: " << getRandomInRange(start, end) << endl;
+    return 0;
+}
+

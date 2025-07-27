@@ -1,0 +1,44 @@
+//cpp Program to return the number of Armstrong numbers up to the user-given range
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+bool isArmstrong(int n)
+{
+    int sum = 0, temp = n, digits = 0;
+    while (temp > 0)
+    {
+        digits++;
+        temp = temp / 10;
+    }
+    temp = n;
+    int d;
+    while (temp > 0)
+    {
+         d = temp % 10;
+        sum = sum + pow(d, digits);
+        temp = temp / 10;
+    }
+    return sum == n;
+}
+
+int countArmstrong(int start, int end)
+{
+    int count = 0;
+    int i;
+    for ( i = start; i <= end; i++)
+    {
+        if (isArmstrong(i))
+            count++;
+    }
+    return count;
+}
+
+int main()
+{
+    int s, e;
+    cout << "Enter start and end of range: ";
+    cin >> s >> e;
+    cout << "Number of Armstrong numbers = " << countArmstrong(s, e) << endl;
+    return 0;
+}

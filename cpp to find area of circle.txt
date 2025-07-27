@@ -1,0 +1,18 @@
+// cpp to find area of circle
+#include<iostream>
+#include<math.h>
+using namespace std;
+int areaofcircle(int r)
+{
+    
+    return 3.14*r*r;
+}
+int main()
+{
+    int x;
+    float y;
+    cin>>x;
+    y=areaofcircle(x);
+    cout<<y;
+    return 0;
+}

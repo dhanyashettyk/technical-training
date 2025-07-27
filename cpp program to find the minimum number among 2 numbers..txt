@@ -1,0 +1,21 @@
+//Write a cpp program to find the minimum number among 2 numbers.
+#include<iostream>
+using namespace std;
+bool issmall(int n1, int n2)
+{
+    return n1<n2 ? true : false;
+}
+int main()
+{
+    int m1,m2;
+    cin>>m1>>m2;
+    if(issmall(m1,m2))
+    {
+        cout<< m1 <<" is smallest "<<endl;
+    }
+    else
+    {
+        cout<< m2 << " is smallest "<<endl;
+    }
+    return 0;
+}

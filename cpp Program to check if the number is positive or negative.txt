@@ -1,0 +1,21 @@
+//cpp Program to check if the number is positive or negative
+#include<iostream>
+using namespace std;
+bool ispos(int n)
+{
+    return n>0? true : false;
+}
+int main()
+{
+    int m1;
+    cin>>m1;
+    if(ispos(m1))
+    {
+        cout<< m1 <<" is positive "<<endl;
+    }
+    else
+    {
+        cout<< m1 << " is negative "<<endl;
+    }
+    return 0;
+}

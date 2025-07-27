@@ -1,0 +1,26 @@
+//cpp Program to print Fibonacci series terms in the user-given range.
+#include <iostream>
+using namespace std;
+
+void printFibonacciRange(int start, int end)
+{
+    int a = 0, b = 1, c;
+    while (a <= end)
+    {
+        if (a >= start)
+            cout << a << " ";
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    cout << endl;
+}
+
+int main()
+{
+    int s, e;
+    cout << "Enter start and end of range: ";
+    cin >> s >> e;
+    printFibonacciRange(s, e);
+    return 0;
+}

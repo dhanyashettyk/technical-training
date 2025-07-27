@@ -1,0 +1,16 @@
+// cpp to find area of square
+#include<iostream>
+using namespace std;
+int areaofsquare(int r)
+{
+    
+    return r*r;
+}
+int main()
+{
+    int x,y;
+    cin>>x;
+    y=areaofsquare(x);
+    cout<<y;
+    return 0;
+}
