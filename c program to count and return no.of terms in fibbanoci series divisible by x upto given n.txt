@@ -1,0 +1,27 @@
+//c program to count and return no.of terms in fibbanoci series divisible by x upto given n
+#include <stdio.h>
+
+int countFibonacciDivisibleByX(int n, int x) 
+{
+    int a = 0, b = 1, count = 0, temp;
+    while (a <= n) 
+    {
+        if (x != 0 && a % x == 0)
+            count++;
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return count;
+}
+
+int main() 
+{
+    int n, x;
+    printf("Enter n and x: ");
+    scanf("%d %d", &n, &x);
+    printf("Fibonacci terms ≤ %d divisible by %d = %d\n", n, x, countFibonacciDivisibleByX(n, x));
+    return 0;
+}
+
+

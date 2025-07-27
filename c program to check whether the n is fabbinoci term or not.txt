@@ -1,0 +1,27 @@
+//c program to check whether the n is fabbinoci term or not
+#include <stdio.h>
+
+int isFibonacci(int n)
+{
+    int a = 0, b = 1, temp;
+    if (n == 0) return 1;
+    while (b < n) {
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return (b == n);
+}
+
+int main()
+ {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (isFibonacci(n))
+        printf("%d is a Fibonacci term.\n", n);
+    else
+        printf("%d is not a Fibonacci term.\n", n);
+    return 0;
+}
+

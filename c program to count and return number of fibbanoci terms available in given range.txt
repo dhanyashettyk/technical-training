@@ -1,0 +1,24 @@
+//c program to count and return number of fibbanoci terms available in given range
+#include <stdio.h>
+
+int countFibonacciInRange(int start, int end)
+{
+    int a = 0, b = 1, count = 0, temp;
+    while (a <= end) {
+        if (a >= start)
+            count++;
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return count;
+}
+
+int main() 
+{
+    int start, end;
+    printf("Enter start and end of range: ");
+    scanf("%d %d", &start, &end);
+    printf("Fibonacci terms in range = %d\n", countFibonacciInRange(start, end));
+    return 0;
+}
