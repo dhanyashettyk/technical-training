@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+bool isPalindrome(char* s, int start, int end)
+{
+    while (start < end)
+    {
+        if (s[start] != s[end])
+            return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+int main()
+{
+    char s[1000];
+    cout << "Enter the string: ";
+    cin >> s;
+
+    int maxLen = 1, startIndex = 0;
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            if (isPalindrome(s, i, j))
+            {
+                int currLen = j - i + 1;
+                if (currLen > maxLen)
+                {
+                    maxLen = currLen;
+                    startIndex = i;
+                }
+            }
+        }
+    }
+
+    cout << "Longest Palindromic Substring: ";
+    for (int i = startIndex; i < startIndex + maxLen; i++)
+        cout << s[i];
+    cout << endl;
+
+    return 0;
+}

@@ -1,0 +1,179 @@
+#include <iostream>
+using namespace std;
+class Student
+{
+    public:
+    int m1,m2,m3,year,roll;
+    char name[100],department[100];
+    void inputdata() 
+    {
+        cout << "Enter the name of the student: ";
+        cin >> name;
+        cout << "Enter the roll number of the student: ";
+        cin >> roll;
+        cout << "Enter the department of the student: ";
+        cin >> department;
+        cout << "enter the year of the student batch : ";
+        cin >> year;
+        cout << "Enter the marks of the student in physics : ";
+        cin >> m1;
+        cout << "Enter the marks of the student in chemistry : ";
+        cin >> m2;
+        cout << "Enter the marks of the student in maths : " ;
+        cin >> m3;
+        
+    }
+
+    void display() 
+    {
+       
+        cout << "Name: " << name << endl;
+        cout << "Roll number: " << roll << endl;
+        cout << "Department: " << department << endl;
+        cout << "Year: " << year << endl;
+        cout << "Marks of physics: " << m1 << endl;
+        cout << "Marks of chemistry: " << m2 << endl;
+        cout << "Marks of maths: " << m3 << endl;
+    }
+    
+    int totalmarks()
+    {
+        
+        return (m1+m2+m3);
+    }
+    
+    float avgmarks(int t)
+    {
+        return (float)(t)/3;
+    }
+    
+    int grade(int a)
+    {
+        if(a>=90)
+        {
+            cout<<" the grade is : A " <<endl;
+        }
+        else if(a>=80)
+        {
+            cout<<" the grade is : B" <<endl;
+        }
+        else if(a>=70)
+        {
+            cout<<" the grade is : C " <<endl;
+        }
+        else if(a>=60)
+        {
+            cout<<" the grade is : D " <<endl;
+        }
+        else if(a>=50)
+        {
+            cout<<" the grade is : F " <<endl;
+        }
+    }
+};
+
+int main() 
+{
+    Student s[100];
+    int opt,n=0,x,i,flag=0,u,e;
+    int tot;
+    double avg;
+    cout<<" enter the number of students : ";
+    cin>>n;
+    for (i=0;i<n;i++) 
+    {
+        cout << "\nEnter details for students " << (i + 1) << ":" << endl;
+        s[i].inputdata();
+    }
+    while(1)
+    {
+        cout<<" \n\n choose any one of the following : "<<endl;
+        cout<<" \n 1. ADD the data  \n 2. DISPLAY \n 3.UPDATE \n 4.DELETE \n 5. EXIT  "<<endl;
+        cout<<" Enter the choice of yours: "<<endl;
+        cin>>opt;
+        switch(opt)
+        {
+            case 1:
+            s[n++].inputdata();
+            break;
+            
+            case 2:
+            cout<<" Enter the roll number of the student : ";
+            cin>>x;
+            for (i = 0; i < n; i++) 
+            {
+                if (x==s[i].roll) 
+                {
+                   s[i].display();
+                   tot=s[i].totalmarks();
+                   cout<<" Total Marks ="<<tot<<endl;
+                   avg=s[i].avgmarks(tot);
+                   cout<<" Average marks ="<<avg<<endl;
+                   s[i].grade((int)avg);
+                   flag = 1;
+                }
+                 if(flag == 1)
+                 break;
+                 
+            }
+            if(flag==0)
+            cout<< " no data found ";
+                 
+            break;
+            
+            case 3:
+            
+            cout<<" enter the roll number:";
+            cin>>x;
+            int n1;
+            for(i=0;i<n;i++)
+            {
+                if(x==s[i].roll)
+                {
+                    cout<<"Choose the subject"<<endl;
+                    cout<<"1.Physics\n2.Chemistry\n3.Maths"<<endl;
+                    cout<<"Enter your choice:";
+                    cin>>u;
+                    switch(u)
+                    {
+                        case 1:
+                        cout<<" enter the marks of physics to update : ";
+                        cin>>s[i].m1;
+                        cout<<"The updated marks of the physics : "<< s[i].m1 <<endl;
+                        break;
+                        
+                        case 2:
+                        cout<<" enter the marks of chemistry to update : ";
+                        cin>>s[i].m2;
+                        cout<<" The updated marks of the chemistry : "<< s[i].m2 <<endl;
+                        break;
+                        
+                        case 3:
+                        cout<<" enter the marks of maths to update : ";
+                        cin>>s[i].m3;
+                        cout<<" The updated marks of the maths : "<< s[i].m3 <<endl;
+                        break;
+                        
+                        default:
+                        cout<<" invalid input "<<endl;
+                        break;
+                    }
+                }
+                else
+                {
+                    cout<<" Incorrect roll number "<<endl;
+                }
+            }
+            break;
+            
+            case 4:
+            cout<< " the student data cannot be deleted "<<endl;
+            break;
+            
+            case 5:
+            exit(0);
+        }    
+    }
+    
+    return 0;
+}

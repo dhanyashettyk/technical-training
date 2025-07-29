@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Employee 
+{
+    public:
+    int id, salary, experience;
+    char name[100], department[100], designation[100];
+
+    void inputdata() 
+    {
+        cout << "Enter ID: ";
+        cin >> id;
+        cout << "Enter Salary: ";
+        cin >> salary;
+        cout << "Enter Experience: ";
+        cin >> experience;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Department: ";
+        cin >> department;
+        cout << "Enter Designation: ";
+        cin >> designation;
+    }
+
+    void display()
+    {
+        cout << "Name: " << name << endl;
+        cout << "ID: " << id << endl;
+        cout << "Salary: " << salary << endl;
+        cout << "Experience: " << experience << endl;
+        cout << "Department: " << department << endl;
+        cout << "Designation: " << designation << endl;
+    }
+};
+
+int main() 
+{
+    Employee emp;
+    emp.inputdata();
+    emp.display();
+    return 0;
+}

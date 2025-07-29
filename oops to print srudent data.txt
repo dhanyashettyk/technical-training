@@ -1,0 +1,132 @@
+#include <iostream>
+using namespace std;
+class Student
+{
+    public:
+    int m1,m2,m3,year,roll;
+    char name[100],department[100];
+    void inputdata() 
+    {
+        cout << "Enter the name of the student: ";
+        cin >> name;
+        cout << "Enter the roll number of the student: ";
+        cin >> roll;
+        cout << "Enter the department of the student: ";
+        cin >> department;
+        cout << "enter the year of the student batch : ";
+        cin >> year;
+        cout << "Enter the marks of the student in physics : ";
+        cin >> m1;
+        cout << "Enter the marks of the student in chemistry : ";
+        cin >> m2;
+        cout << "Enter the marks of the student in maths : " ;
+        cin >> m3;
+        
+    }
+
+    void display() 
+    {
+       
+        cout << "Name: " << name << endl;
+        cout << "Roll number: " << roll << endl;
+        cout << "Department: " << department << endl;
+        cout << "Year: " << year << endl;
+        cout << "Marks of physics: " << m1 << endl;
+        cout << "Marks of chemistry: " << m2 << endl;
+        cout << "Marks of maths: " << m3 << endl;
+    }
+    
+    int totalmarks()
+    {
+        
+        return (m1+m2+m3);
+    }
+    
+    float avgmarks(int t)
+    {
+        return (float)(t)/3;
+    }
+    
+    int grade(int a)
+    {
+        if(a>=90)
+        {
+            cout<<" the grade is : A " <<endl;
+        }
+        else if(a>=80)
+        {
+            cout<<" the grade is : B" <<endl;
+        }
+        else if(a>=70)
+        {
+            cout<<" the grade is : C " <<endl;
+        }
+        else if(a>=60)
+        {
+            cout<<" the grade is : D " <<endl;
+        }
+        else if(a>=50)
+        {
+            cout<<" the grade is : F " <<endl;
+        }
+    }
+    
+    bool passorfail()
+    {
+        if((m1>35) && (m2>35)  &&  (m3>35))
+        {
+            return true;
+        }
+        else
+        return false;
+    }
+};
+
+int main() 
+{
+    int n;
+    cout<<" enter the number of students to view the data ";
+    cin>>n;
+    Student s[n];
+    int search_roll;
+    int flag = 0;
+    int i,tot;
+    double avg;
+    for ( i=0;i<n;i++) 
+    {
+        cout << "\nEnter details for students " << (i + 1) << ":" << endl;
+        s[i].inputdata();
+    }
+    cout << "\nEnter student roll number to search data: ";
+    cin >> search_roll;
+    for (i = 0; i < n; i++) 
+    {
+        if (s[i].roll==search_roll) 
+        {
+            if(s[i].passorfail())
+            {
+                
+            s[i].display();
+            tot=s[i].totalmarks();
+            cout<<" Total Marks ="<<tot<<endl;
+            avg=s[i].avgmarks(tot);
+            cout<<" Average marks ="<<avg<<endl;
+            s[i].grade((int)avg);
+            }
+            else
+            {
+                cout<<" The student is failed";
+            }
+            flag = 1;
+            
+        }
+        if(flag == 1)
+        break;
+    } 
+    
+    if (flag==0)
+    {
+        cout << "data not found " << endl;
+    }
+    return 0;
+}

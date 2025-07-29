@@ -1,0 +1,65 @@
+#include<iostream>
+#include<string.h>
+#include<ctype.h>
+using namespace std;
+
+void findSubstring(char *s, int &start, int &length)
+{
+    int i = 0, n = strlen(s);
+    int maxDigits = 0;
+    int tempStart = 0;
+    int currDigits = 0;
+
+    start = -1;
+    length = 0;
+
+    while(i <= n)
+    {
+        if(isdigit(s[i]))
+        {
+            if(currDigits == 0)
+                tempStart = i;
+            currDigits++;
+        }
+        else
+        {
+            if(currDigits > maxDigits)
+            {
+                maxDigits = currDigits;
+                start = tempStart;
+                length = currDigits;
+            }
+            currDigits = 0;
+        }
+        i++;
+    }
+
+    if(currDigits > maxDigits)
+    {
+        start = tempStart;
+        length = currDigits;
+    }
+}
+
+int main()
+{
+    char s[1000];
+    int i, start, len;
+
+    cout << "Enter the string: ";
+    cin >> s;
+
+    findSubstring(s, start, len);
+
+    cout << "Smallest substring with most digits: ";
+    if(start == -1)
+        cout << "No digits found.";
+    else
+    {
+        for(i = start; i < start + len; i++)
+            cout << s[i];
+    }
+
+    cout << endl;
+    return 0;
+}

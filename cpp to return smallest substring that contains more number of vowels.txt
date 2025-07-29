@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int isVowel(char ch)
+{
+    ch = tolower(ch);
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+
+void findSubstring(char *s, int &start, int &length)
+{
+    int n = strlen(s);
+    int maxVowels = 0;
+    int tempStart = 0, currVowels = 0;
+    int minLen = n + 1;
+    start = -1;
+    length = 0;
+
+    for(int i = 0; i <= n; i++)
+    {
+        if(isVowel(s[i]))
+        {
+            if(currVowels == 0)
+                tempStart = i;
+            currVowels++;
+        }
+        else
+        {
+            if(currVowels > 0)
+            {
+                int currLen = i - tempStart;
+                if(currVowels > maxVowels || (currVowels == maxVowels && currLen < minLen))
+                {
+                    maxVowels = currVowels;
+                    start = tempStart;
+                    length = currLen;
+                    minLen = currLen;
+                }
+                currVowels = 0;
+            }
+        }
+    }
+    
+    if(currVowels > 0)
+    {
+        int currLen = n - tempStart;
+        if(currVowels > maxVowels || (currVowels == maxVowels && currLen < minLen))
+        {
+            start = tempStart;
+            length = currLen;
+        }
+    }
+}
+
+int main()
+{
+    char s[1000];
+    int start, len;
+
+    cout << "Enter the string: ";
+    cin >> s;
+
+    findSubstring(s, start, len);
+
+    cout << "Smallest substring with most vowels: ";
+    if(start == -1)
+        cout << "No vowels found.";
+    else
+    {
+        for(int i = start; i < start + len; i++)
+            cout << s[i];
+    }
+
+    cout << endl;
+    return 0;
+}

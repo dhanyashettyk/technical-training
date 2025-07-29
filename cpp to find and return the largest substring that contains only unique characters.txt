@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+void findLongestUniqueSubstring(char s[], int &start, int &maxLen)
+{
+    int n = strlen(s);
+    int v[256];  // ASCII 
+
+    for(int i = 0; i < 256; i++)
+        v[i] = -1;
+
+    int left = 0;
+    maxLen = 0;
+    start = 0;
+
+    for(int right = 0; right < n; right++)
+    {
+
+        if(v[s[right]] >= left)
+        {
+            left = v[s[right]] + 1;
+        }
+
+        v[s[right]] = right;
+
+        if(maxLen < right - left + 1)
+        {
+            maxLen = right - left + 1;
+            start = left;
+        }
+    }
+}
+
+void printSubstring(char s[], int start, int length)
+{
+    for(int i = start; i < start + length; i++)
+        cout << s[i];
+    cout << endl;
+}
+
+int main()
+{
+    char s[1000];
+    cout << "Enter the string: ";
+    cin >> s; 
+
+    int start, maxLen;
+    findLongestUniqueSubstring(s, start, maxLen);
+
+    cout << "Longest substring with all unique characters: ";
+    printSubstring(s, start, maxLen);
+
+    return 0;
+}
